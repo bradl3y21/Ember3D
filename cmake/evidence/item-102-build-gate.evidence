@@ -1,0 +1,11 @@
+# Evidence declaration — item 102: the build gate (Kiln). The claim that made
+# 'a green ctest on a red tree' impossible. D33 class: BUILD.
+
+item: 102-build-gate
+class: BUILD
+claim: build.gate (FIXTURES_SETUP) rebuilds the tree ctest runs against and build.freshness asserts no binary predates the newest source, so a stale-binary green run is structurally impossible; every other test carries FIXTURES_REQUIRED ember_build
+residue: the freshness half cannot see a MIXED tree (one relinked binary newer than the newest source passes — the per-target variant is the follow-up that closes it); the gate's 3-attempt retry can mask a red tree for the duration of ~6 seconds of file locks; neither check proves the build is CORRECT, only that binaries match sources
+artifact: bin/Ember3D.exe
+depends: src/, vendor/
+test: build.gate
+test_file: cmake/BuildGate.cmake

@@ -1,0 +1,14 @@
+# Evidence declaration — item: the defect-1 viewport-rect fix, platform half
+# (Kiln). Verified mechanically by cmake/VerifyEvidence.cmake under D33.
+#
+# Format: `key: value` (one per line, '#' comments). Required: item, class,
+# claim, residue. Class keys follow the D33 table (ARCHITECTURE §7).
+
+item: defect-1-viewport-rect-platform
+class: SCENE
+claim: Input::viewportRect exposes the rect plus the window size it was captured at, so stale-rect regression is a pure unit test with no GL context, and Window keeps it current through both size callbacks (the fix for 'orbit broken after maximise/fullscreen')
+residue: covers the PURE logic only — setViewportRect, viewportRect, rectIsStaleFor, cursorOverViewport hit-testing. It does NOT prove the GLFW callbacks fire on a real resize (that is app.smoke_size_agree's mid-run EMBER_SMOKE_RESIZE), nor the D29 area-relay case where the rect is a sub-window area rather than the whole window (not landed; the whole-window assumption in these tests dies with it)
+symbol: viewportRect
+symbol_file: src/platform/Input.h
+test: test_platform_input
+test_file: tests/test_platform_input.cpp

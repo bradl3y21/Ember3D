@@ -1,0 +1,29 @@
+# Build output — always regenerable, never commit
+build/
+build-*/
+bin/
+bin-*/
+out/
+
+# CMake / compiler noise
+CMakeCache.txt
+CMakeFiles/
+*.obj
+*.o
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
+*.exe
+
+# Local/team-era receipts and private session brief
+logs/
+SINGLE-AI-BRIEF.md
+tests/evidence/**/*.txt
+
+# Editor / OS
+.vs/
+.vscode/
+.idea/
+Thumbs.db

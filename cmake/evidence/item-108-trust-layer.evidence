@@ -1,0 +1,12 @@
+# Evidence declaration - item 108: fold the verifier into the contract.
+# Proposed by Ash (D39 thread); this is the FIRST DOC-class declaration in the
+# tree, so it exercises the DOC class end to end including the item-107
+# phrase-set/regex path. Verified by Ash's greps before hand-off; the verifier
+# re-checks both strings independently below.
+
+item: 108-trust-layer
+class: DOC
+claim: ARCHITECTURE 7 documents the verifier as built (six ordered checks, per-class extras, the item-107 rejection proof) and states the declaration-order rule; TEAM 10 carries the bench version
+residue: DOC checks text presence and absence only. It does NOT prove the verifier's described behaviour matches VerifyEvidence.cmake (that is item 106's evidence cases plus item 107's mutation matrix), and it cannot prove D39 is ENFORCED - declaration order and duplicate definitions are caught by reading and by a remembered grep, not by a check. Also: the stale-side sweep is WHOLE-TREE, so if a future doc quotes the retired phrase as history, this declaration goes red - correct behaviour (a stale claim is a stale claim), but it means this residue is doing real work: it is what stops the declaration overclaiming
+doc_must_contain: declaration order is read order
+doc_must_not_contain: turns it into a checking tool

@@ -1,0 +1,6 @@
+EMBER3D.SCENE v1
+nextid 2
+light 0 -1 0 1 1 1 1 1
+selection 0
+object 1 "Solo" 0 none visible 0 0 0 0 0 0 1 1 1 1 1 1 1 0 0.5
+end

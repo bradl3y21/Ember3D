@@ -1,0 +1,6 @@
+EMBER3D.SCENE v2
+nextid 3
+selection 1 2
+object 1 "SmokeCube" 0 cube visible 0 0 0 0 0 0 1 1 1 0.800000012 0.800000012 0.800000012 1 0 0.5
+object 2 "Sphere" 0 sphere visible 0 0 0 0 0 0 1 1 1 0.800000012 0.800000012 0.800000012 1 0 0.5
+end
